@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import MineTile from './mine/mine.tile';
-import NumberTile from './number/number.tile';
-import HiddenableTile from './hiddenable/hiddenable.tile';
+import MineTile from './mine/mine-tile.component';
+import NumberTile from './number/number-tile.component';
+import HiddenableTile from './hiddenable/hiddenable-tile.component';
 
 interface Bomb {
     type: "Bomb",
@@ -17,7 +17,7 @@ function TileContainer(props: Bomb | Number) {
         return <HiddenableTile child={<MineTile />} isHidden={true} />;
     }
     else if (props.type === 'Number') {
-        return <HiddenableTile child={<NumberTile number={props.bombsCount} />} isHidden={true} />;
+        return <HiddenableTile child={<NumberTile value={props.bombsCount} />} isHidden={true} />;
     }
 
     return null;

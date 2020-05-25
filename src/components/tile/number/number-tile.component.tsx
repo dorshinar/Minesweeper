@@ -1,9 +1,9 @@
 import React from 'react';
 
-function NumberTile(props: {number: number}) {
+function NumberTile(props: {value: number}) {
     return (
         <div className="tile number">
-            {props.number}
+            {props.value}
         </div>
     );
 }
