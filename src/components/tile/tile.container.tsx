@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MineTile from './mine/mine-tile.component';
 import NumberTile from './number/number-tile.component';
 import HiddenableTile from './hiddenable/hiddenable-tile.component';
@@ -14,10 +14,10 @@ interface Number {
 
 function TileContainer(props: Bomb | Number) {
     if (props.type === 'Bomb') {
-        return <HiddenableTile child={<MineTile />} isHidden={true} />;
+        return <HiddenableTile child={<MineTile />} isHidden={false} />;
     }
     else if (props.type === 'Number') {
-        return <HiddenableTile child={<NumberTile value={props.bombsCount} />} isHidden={true} />;
+        return <HiddenableTile child={<NumberTile value={props.bombsCount} />} isHidden={false} />;
     }
 
     return null;

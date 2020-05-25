@@ -1,9 +1,10 @@
 import React from 'react';
+import img from '../../public/assets/icons8-flag-filled-100.png';
 
 function FlaggedTile() {
     return (
         <div className="tile flagged">
-            <img src='../../public/assets/icons8-flag-filled-100.png' />
+            <img src={img} />
         </div>
     );
 }
