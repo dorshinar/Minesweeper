@@ -4,23 +4,33 @@ import NumberTile from './number/number-tile.component';
 import HiddenableTile from './hiddenable/hiddenable-tile.component';
 
 interface Bomb {
-    type: "Bomb",
+  type: 'Bomb';
 }
 
 interface Number {
-    type: "Number",
-    bombsCount: number;
+  type: 'Number';
+  bombsCount: number;
 }
 
 function TileContainer(props: Bomb | Number) {
-    if (props.type === 'Bomb') {
-        return <HiddenableTile child={<MineTile />} isHidden={false} />;
-    }
-    else if (props.type === 'Number') {
-        return <HiddenableTile child={<NumberTile value={props.bombsCount} />} isHidden={false} />;
-    }
+  if (props.type === 'Bomb') {
+    /**
+     * Passing children is simply wrapping them:
+     * <HiddenableTile><MineTile /><HiddenableTile />
+     * And in HiddenableTile:
+     * { return props.children }
+     */
+    return <HiddenableTile child={<MineTile />} isHidden={false} />;
+  } else if (props.type === 'Number') {
+    return (
+      <HiddenableTile
+        child={<NumberTile value={props.bombsCount} />}
+        isHidden={false}
+      />
+    );
+  }
 
-    return null;
+  return null;
 }
 
 export default TileContainer;
