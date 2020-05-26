@@ -89,7 +89,6 @@ function findNeighbours(index: number, colsCount: number, rowsCount: number) {
         }
     }
     
-    console.log("findNeighbours", {index, j, i, neighbours});
     return neighbours;
 }
 

@@ -3,7 +3,7 @@ import React from "react";
 import './game.page.scss'
 
 function Game() {
-    return <Board colsNum={4} rowsNum={7} mineCount={3} />
+    return <Board colsNum={4} rowsNum={7} mineCount={7} />
 }
 
 export default Game;
